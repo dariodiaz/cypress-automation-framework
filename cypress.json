@@ -1,0 +1,5 @@
+{
+    "videos": false,
+    "pageLoadTimeout": 30000,
+    "defaultCommandTimeout": 10000
+}

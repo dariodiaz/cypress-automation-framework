@@ -1,0 +1,20 @@
+{
+  "name": "cypress-automation-framework",
+  "version": "1.0.0",
+  "description": "Cypress Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:spec": "cypress run --spec"
+  },
+  "keywords": [
+    "test",
+    "automation"
+  ],
+  "author": "Dario Diaz",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.2.0"
+  }
+}
