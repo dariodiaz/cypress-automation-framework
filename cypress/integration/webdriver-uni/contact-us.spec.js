@@ -10,7 +10,7 @@ describe('Test Contact Us form via Webdriveruni', () => {
        cy.get('#contact_reply').should('contain', 'Thank You for your Message!')
     });
 
-    it.only('Should not be able to submit a successful submission via contact us form', () => {
+    it('Should not be able to submit a successful submission via contact us form', () => {
         cy.visit('http://webdriveruniversity.com/Contact-Us/contactus.html')
        cy.get('[name="first_name"]').type('Dario')
        cy.get('[name="last_name"]').type('Diaz')
