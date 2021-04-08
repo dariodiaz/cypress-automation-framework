@@ -15,6 +15,7 @@
   "author": "Dario Diaz",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.2.0"
+    "cypress": "^7.0.1",
+    "cypress-xpath": "^1.6.2"
   }
 }
