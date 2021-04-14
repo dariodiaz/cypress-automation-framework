@@ -7,7 +7,7 @@ describe('Test Contact Us form via Webdriveruni', () => {
        cy.get('[name="email"]').type('dario@test.com')
        cy.get('textarea.feedback-input').type('text test')
        cy.get('[type="submit"]').click()
-       cy.get('#contact_reply').should('contain', 'Thank You for your Message!')
+       cy.get('h1').should('have.text', 'Thank You for your Message!')
     });
 
     it('Should not be able to submit a successful submission via contact us form', () => {
