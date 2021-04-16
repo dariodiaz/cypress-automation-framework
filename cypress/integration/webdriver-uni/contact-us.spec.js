@@ -16,7 +16,7 @@ describe('Test Contact Us form via Webdriveruni', () => {
        cy.get('[name="last_name"]').type('Diaz')
        cy.get('textarea.feedback-input').type('text test')
        cy.get('[type="submit"]').click()
-       cy.get('body').should('contain', 'Error: all fields are required')
-       cy.get('body').should('contain', 'Error: Invalid email address')
+       cy.get('body').contains('Error: all fields are required')
+       cy.get('body').contains('Error: Invalid email address')
     });
 });
