@@ -4,6 +4,7 @@ describe('Test Contact Us form via Webdriveruni', () => {
        cy.visit('http://webdriveruniversity.com/Contact-Us/contactus.html')
        cy.document().should('have.property', 'charset').and('eq', 'UTF-8')
        cy.title().should('include', 'WebDriver | Contact Us')
+       cy.url().should('include', 'contactus')
        cy.get('[name="first_name"]').type('Dario')
        cy.get('[name="last_name"]').type('Diaz')
        cy.get('[name="email"]').type('dario@test.com')
