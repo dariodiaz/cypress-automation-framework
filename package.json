@@ -8,7 +8,8 @@
     "cy:open": "cypress open",
     "cy:spec": "cypress run --spec",
     "cy:run": "cypress run",
-    "cy:run:headed": "cypress run --headed"
+    "cy:run:headed": "cypress run --headed",
+    "cy:run:chrome": "cypress run --browser chrome"
   },
   "keywords": [
     "test",
