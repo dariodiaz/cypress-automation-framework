@@ -8,4 +8,8 @@ describe('Inspect Automation Test Store items using chain of commands', () => {
         cy.visit('https://automationteststore.com')
         cy.get('.prdocutname').contains('Skinsheen Bronzer Stick').click()
     })
+    it('Should be able to click on the first item using index', () => {
+        cy.visit('https://automationteststore.com')
+        cy.get('.fixed_wrapper').find('.prdocutname').eq(0).click()
+    })
 })
