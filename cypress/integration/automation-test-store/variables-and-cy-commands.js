@@ -7,7 +7,7 @@ describe('Verifying variables, cypress and jquery commands ', () => {
         listOfLinksText.forEach(text => cy.get('a[href*="product/category&path="]').contains(text).click())
     })
 
-    it.only('Navigating to specific product pages - 2', () => {
+    it('Navigating to specific product pages - 2', () => {
         cy.visit('https://automationteststore.com/')
         cy.get('a[href*="product/category&path="]').contains('Makeup').click()
         // this code will fail
@@ -17,6 +17,7 @@ describe('Verifying variables, cypress and jquery commands ', () => {
         cy.get('h1 .maintext').then(($headerText) => {
             const headerText = $headerText.text()
             cy.log('Found header text: ' + headerText)
+            expect(headerText).is.eq('Makeup')
         })
     })
 })
