@@ -7,7 +7,7 @@ describe('Verifying variables, cypress and jquery commands ', () => {
         listOfLinksText.forEach(text => cy.get('a[href*="product/category&path="]').contains(text).click())
     })
 
-    it.only('Validate properties of the contact page', () => {
+    it('Validate properties of the contact page', () => {
         cy.visit('https://automationteststore.com/index.php?rt=content/contact')
         //Uses cypress commands and chaining
         cy.contains('#ContactUsFrm', 'Contact Us Form').find('#field_11').should('contain', 'First name')
