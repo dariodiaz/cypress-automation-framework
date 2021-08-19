@@ -15,11 +15,18 @@ describe('Alias and invoke Challenge', () => {
         //     cy.log($el.text())
         // })
         cy.get('.thumbnail').find('.oneprice').invoke('text').as('itemPrice')
+        cy.get('.thumbnail').find('.pricenew').invoke('text').as('saleItemPrice')
+        
+        let itemsTotal = 0
         cy.get('@itemPrice').then($linkText => {
-            var itemPrice = $linkText.split('$')
+            let itemsPriceTotal = 0
+            let itemPrice = $linkText.split('$')
             for(var i = 0; i < itemPrice.length; i++) {
                 cy.log(itemPrice[i])
+                itemsPriceTotal += Number(itemPrice[i])
             }
+            itemsTotal += itemsPriceTotal
+            cy.log("Non sale price items total: " + itemsPriceTotal)
         })
     })
 })
