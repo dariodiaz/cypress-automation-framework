@@ -28,5 +28,16 @@ describe('Alias and invoke Challenge', () => {
             itemsTotal += itemsPriceTotal
             cy.log("Non sale price items total: " + itemsPriceTotal)
         })
+
+        cy.get('@saleItemPrice').then($linkText => {
+            let saleItemsPriceTotal = 0
+            let saleItemPrice = $linkText.split('$')
+            for(var i = 0; i < saleItemPrice.length; i++) {
+                cy.log(saleItemPrice[i])
+                saleItemsPriceTotal += Number(saleItemPrice[i])
+            }
+            itemsTotal += saleItemsPriceTotal
+            cy.log("Sale price items total: " + saleItemsPriceTotal)
+        })
     })
 })
