@@ -39,5 +39,9 @@ describe('Alias and invoke Challenge', () => {
             itemsTotal += saleItemsPriceTotal
             cy.log("Sale price items total: " + saleItemsPriceTotal)
         })
+        .then(() => {
+            cy.log("The total price of all products: " + itemsTotal)
+            expect(itemsTotal).to.equal(616.7)
+        })
     })
 })
