@@ -12,5 +12,8 @@ describe('Test Contact Us form via Webdriveruni', () => {
 
        cy.go('forward')
        cy.url().should('include', 'contactus')
+
+       cy.go('back')
+       cy.get('#login-portal').invoke('removeAttr', 'target').click({force:true})
     });
 });
