@@ -8,12 +8,14 @@ describe('Test Contact Us form via Webdriveruni', () => {
        cy.go('back')
        cy.reload()
        //cy.reload(true) //reload without using cache
-       cy.url().should('include', 'http://www.webdriveruniversity.com/')
+       cy.url().should('include', 'http://webdriveruniversity.com/')
 
        cy.go('forward')
        cy.url().should('include', 'contactus')
 
        cy.go('back')
        cy.get('#login-portal').invoke('removeAttr', 'target').click({force:true})
+       cy.url().should('include', 'Login-Portal')
+       cy.go('back')
     });
 });
