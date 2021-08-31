@@ -8,6 +8,7 @@ describe('Test Contact Us form via Webdriveruni', () => {
        cy.go('back')
        cy.reload()
        //cy.reload(true) //reload without using cache
+       cy.url().should('include', 'http://www.webdriveruniversity.com/')
 
        cy.go('forward')
        cy.url().should('include', 'contactus')
