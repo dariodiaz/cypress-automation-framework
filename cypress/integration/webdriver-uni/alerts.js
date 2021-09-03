@@ -21,4 +21,17 @@ describe('Handle js alerts', () => {
 
         cy.get('#confirm-alert-text').contains('You pressed OK!')
     })
+
+    /* Challenge: in a separate test, click on the alert, and then cancel, asserting the text*/
+    it('Challenge - Click on the alert and then on cancel button', () => {
+        cy.visit('http://webdriveruniversity.com')
+        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({force:true})
+ 
+        cy.get('#button4').click()
+        cy.on('window:confirm', (str) => {
+            return false
+        })
+
+        cy.get('#confirm-alert-text').contains('You pressed Cancel!')
+    })
 });
