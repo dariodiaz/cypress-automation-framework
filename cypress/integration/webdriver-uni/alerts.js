@@ -15,7 +15,7 @@ describe('Handle js alerts', () => {
         cy.get('#popup-alerts').invoke('removeAttr', 'target').click({force:true})
  
         cy.get('#button4').click()
-        cy.on('window:alert', (str) => {
+        cy.on('window:confirm', (str) => {
             return true
         })
 
