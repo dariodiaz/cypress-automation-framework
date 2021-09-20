@@ -9,4 +9,12 @@ describe('Verify checkboxes via Webdriveruni', () => {
        cy.get('@option-1').check()
        cy.get('@option-1').check().should('be.checked')
     });
+
+    it('Challenge - Uncheck and validate', () => {
+        cy.visit('http://webdriveruniversity.com')
+        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
+ 
+        cy.get('#checkboxes > :nth-child(5) > input').as('option-3')
+        cy.get('@option-3').uncheck().should('not.be.checked')
+     });
 });
