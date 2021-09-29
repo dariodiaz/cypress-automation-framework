@@ -8,5 +8,7 @@ describe('Interact with dropdown lists via Webdriveruni', () => {
         cy.get('#dropdowm-menu-2').select('testng')
         cy.get('#dropdowm-menu-3').select('javascript')
 
+        cy.get('#dropdowm-menu-3').select('JavaScript')
+
     });
 });
