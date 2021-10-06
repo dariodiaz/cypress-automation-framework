@@ -9,4 +9,13 @@ describe('Interact with dropdown lists via Webdriveruni', () => {
         cy.get('#dropdowm-menu-3').select('javascript').contains('JavaScript')
 
     });
+
+    it('Dropdown challenge - Select Maven and Testng and assert', () => {
+        cy.visit('http://webdriveruniversity.com')
+        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
+
+        cy.get('#dropdowm-menu-2').select('Maven').should('have.value', 'maven')
+        cy.get('#dropdowm-menu-2').select('TestNG').contains('TestNG')
+
+    });
 });
