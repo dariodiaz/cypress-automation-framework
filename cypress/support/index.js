@@ -21,3 +21,6 @@ import './commands'
 Cypress.Server.defaults({
     ignore: xhr => true
 })
+
+// ***********************************************************
+require('cypress-grep')()
