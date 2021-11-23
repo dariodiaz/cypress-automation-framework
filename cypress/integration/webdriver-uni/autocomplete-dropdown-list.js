@@ -19,4 +19,23 @@ describe('Verify Autocomplete dropdown lists via webdriveruni', () => {
         })
     });
 
+    it('Challenge - Select specific product via autocomplete list using letter G', () => {
+        cy.visit('http://webdriveruniversity.com')
+        cy.get('#autocomplete-textfield').invoke('removeAttr', 'target').click({force:true})
+
+        cy.get('#myInput').type('G')
+
+        cy.get('#myInputautocomplete-list > *').each(($el, index, $list) => {
+            const prod = $el.text()
+            const productToSelect = 'Grapes'
+
+            if(prod === productToSelect){
+                $el.trigger("click")
+
+                cy.get('#submit-button').click()
+                cy.url().should('include', productToSelect)
+            }
+        })
+    });
+
 });
