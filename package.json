@@ -18,8 +18,9 @@
   "author": "Dario Diaz",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^8.7.0",
+    "cypress": "^9.1.0",
     "cypress-grep": "^2.9.1",
-    "cypress-xpath": "^1.6.2"
+    "cypress-xpath": "^1.6.2",
+    "har-validator": "^5.1.5"
   }
 }
