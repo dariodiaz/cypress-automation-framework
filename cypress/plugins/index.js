@@ -21,6 +21,7 @@ module.exports = (on, config) => {
 }
 
 // ********************************************************
+
 module.exports = (on, config) => {
   // optional: register cypress-grep plugin code
   // https://github.com/bahmutov/cypress-grep
