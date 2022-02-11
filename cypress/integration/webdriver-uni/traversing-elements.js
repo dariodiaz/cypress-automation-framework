@@ -44,7 +44,8 @@ describe("Traversing DOM elements in Cypress", () => {
       cy.get('.traversal-button-states > button').not('.disabled').should('not.have.class', 'disabled')
     });
   
-    it("parent() To get parent DOM element of elements", () => {
+    it.only("parent() To get parent DOM element of elements", () => {
+      cy.get('.traversal-mark').parent().should('contain', 'Lorem ipsum dolor sit amet')
     });
   
     it("parents() to get parents DOM element of elements", () => {
