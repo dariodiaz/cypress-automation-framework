@@ -70,7 +70,7 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get(".traversal-cite").parents().should("match", "blockquote");
   });
 
-  it.only("prev() to get the previous sibling DOM element within elements", () => {
+  it("prev() to get the previous sibling DOM element within elements", () => {
     cy.get("#sugar").prev().should("contain", "Espresso");
   });
 
