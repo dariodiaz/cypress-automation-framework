@@ -78,7 +78,9 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get("#sugar").prevAll().should("have.length", "3");
   });
 
-  it("prevUntil() to get all previous sibling DOM elements within elements until other element", () => {});
+  it("prevUntil() to get all previous sibling DOM elements within elements until other element", () => {
+    cy.get("#sugar").prevUntil("#tea").should("have.length", "3");
+  });
 
   it("siblings() To get all sibling DOM elements of elements", () => {});
 });
