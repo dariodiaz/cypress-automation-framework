@@ -27,13 +27,13 @@ describe("Handling data via webdriveruni", () => {
   it("Calculate and assert the age of a given user based on last name", () => {
     cy.xpath("//table[@id='t01']//td[2]").each(($el, index, $list) => {
       const text = $el.text();
-      if (text.includes("Jackson")) {
+      if (text.includes("Smith")) {
         cy.xpath("//table[@id='t01']//td[2]")
           .eq(index)
           .next()
           .then(function (age) {
             const userAge = age.text();
-            expect(userAge).to.equal("94");
+            expect(userAge).to.equal("45");
           });
       }
     });
