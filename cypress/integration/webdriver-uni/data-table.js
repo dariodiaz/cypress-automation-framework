@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+import Helpers, { helpers } from "../../helpers/helpers";
 describe("Handling data via webdriveruni", () => {
   beforeEach(() => {
     cy.visit("http://webdriveruniversity.com/");
@@ -39,3 +40,6 @@ describe("Handling data via webdriveruni", () => {
     });
   });
 });
+
+let helper = new Helpers();
+console.log(helper.parseTable("t01"));
