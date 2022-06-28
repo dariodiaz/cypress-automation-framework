@@ -82,8 +82,9 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get("#veggie").prevUntil("#fruits").should("have.length", 5);
   });
 
-  it("siblings() To get all sibling DOM elements of elements", () => {});
-  cy.get(".traversal-button-other-states .active")
-    .siblings()
-    .should("have.length", 3);
+  it("siblings() To get all sibling DOM elements of elements", () => {
+    cy.get(".traversal-button-other-states .active")
+      .siblings()
+      .should("have.length", 3);
+  });
 });

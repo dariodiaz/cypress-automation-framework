@@ -25,21 +25,21 @@ describe("Handling data via webdriveruni", () => {
         expect(numb).to.eq(322);
       });
   });
-  it("Calculate and assert the age of a given user based on last name", () => {
-    cy.xpath("//table[@id='t01']//td[2]").each(($el, index, $list) => {
-      const text = $el.text();
-      if (text.includes("Smith")) {
-        cy.xpath("//table[@id='t01']//td[2]")
-          .eq(index)
-          .next()
-          .then(function (age) {
-            const userAge = age.text();
-            expect(userAge).to.equal("45");
-          });
-      }
-    });
-  });
+  //   it("Calculate and assert the age of a given user based on last name", () => {
+  //     cy.xpath("//table[@id='t01']//td[2]").each(($el, index, $list) => {
+  //       const text = $el.text();
+  //       if (text.includes("Smith")) {
+  //         cy.xpath("//table[@id='t01']//td[2]")
+  //           .eq(index)
+  //           .next()
+  //           .then(function (age) {
+  //             const userAge = age.text();
+  //             expect(userAge).to.equal("45");
+  //           });
+  //       }
+  //     });
+  //   });
 });
 
-let helper = new Helpers();
-console.log(helper.parseTable("t01"));
+// let helper = new Helpers();
+// console.log(helper.parseTable("t01"));
