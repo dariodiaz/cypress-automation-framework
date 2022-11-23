@@ -1,10 +1,24 @@
 // <reference types="Cypress" />
 describe("Go to WDI Gold Site - Local", () => {
-  it("Should access WDI Gold", () => {
+  it("Should log in", () => {
     cy.visit("http://wdigold.vin65.io/");
-    cy.get(".v65-productGroup-product:nth-child(1) span").click();
+    cy.get("header").click();
+    cy.get(".v65-login > .v65-modalLoginLink").click();
+    cy.get("#username").click();
+    cy.get("#username").type("testuserddiaz");
+    cy.get("#password").type("Qatest123");
+    cy.get(":nth-child(5) > .defaultBtn > span").click();
+    //cy.url().should("contains", "http://wdigold.vin65.io/index.cfm");
+  });
+  it("Should access WDI Gold", () => {
+    //cy.visit("http://wdigold.vin65.io/");
+    cy.pause();
+    cy.get(".v65-productGroup-product:nth-child(1) span").click({
+      force: true,
+    });
     //cy.get(".v65-productGroup-product:nth-child(1) .v65-addToCart").submit();
-    cy.get("span:contains(Check Out)").click();
+    cy.get("#v65-toggleModalCart").click({ force: true });
+    cy.get("span:contains(Check Out)").click({ force: true });
     cy.get("#joinClub").click({ force: true });
     cy.get("#tab-pickupBlock").click();
     //cy.get(".v65-shippingOptionsContinue").click();
@@ -16,14 +30,17 @@ describe("Go to WDI Gold Site - Local", () => {
       "#v65-checkout > div > div.v65-shippingInformation.v65-checkoutSection > div:nth-child(2) > button > span.v65-shippingOptionsContinue"
     ).click({ force: true });
     cy.pause(500);
+    /*
     cy.get("#cardNumber").type("4242424242424242", { force: true });
     cy.get("#nameOnCard").type("Test User", { force: true });
     cy.get("#cardExpiryMo").type("07");
     cy.get("#cardExpiryMo").select("05");
     cy.get("#cardExpiryYr").type("2025");
     cy.get("#cardExpiryYr").select("2026");
+    */
     cy.get("#cvv2").click();
     cy.get("#cvv2").type("111");
+    /*
     cy.get("#v65-shipBirthMonth").type("5");
     cy.get("#v65-shipBirthMonth").select("May");
     cy.get("#v65-shipBirthDay").click();
@@ -42,8 +59,9 @@ describe("Go to WDI Gold Site - Local", () => {
     cy.get("#zipCode").click();
     cy.get("#zipCode").type("94503");
     cy.get("#email").click();
-    cy.get("#email").type("testuser@test.com");
+    cy.get("#email").type("testautomateduser03@test.com");
     cy.get("#mainPhone").type("1112223345");
+    */
     cy.get(".button:nth-child(3)").click();
     // cy.get(
     //   "body > main > div > div > div.v65-checkoutTools > div.v65-reviewOrder.v65-checkoutSection > div > button"
