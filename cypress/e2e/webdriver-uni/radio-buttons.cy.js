@@ -16,4 +16,8 @@ describe('Verify radio buttons via Webdriveruni', () => {
         cy.get('[value="cabbage"]').should('be.disabled')
         cy.get('[value="pumpkin"]').should('be.checked')
      });
+
+     it('Should check the required checkboxes only', () => {
+        
+     });
 });
